@@ -19,14 +19,7 @@ const VideoCard: NextPage<IProps> = ({post}) => {
     const [isVideoMuted, setIsVideoMuted] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    // useEffect(() => {
-    //
-    //     onVideoPress();
-    //
-    //     return () => {
-    //
-    //     };
-    // }, []);
+
 
     const onVideoPress = () => {
         if (playing) {
@@ -48,6 +41,14 @@ const VideoCard: NextPage<IProps> = ({post}) => {
         videoRef?.current?.pause();
         setPlaying(false);
     }
+
+
+
+    useEffect(() => {
+        if (videoRef?.current) {
+            videoRef.current.muted = isVideoMuted;
+        }
+    }, [isVideoMuted]);
 
     return (
         <div className='flex flex-col border-b-2 border-gray-200 pb-6'>
@@ -91,7 +92,7 @@ const VideoCard: NextPage<IProps> = ({post}) => {
                      onMouseLeave={() => setIsHover(false)}
                 >
 
-                    <Link href='/'>
+                    <Link href={`/detail/${post._id}`}>
                             <video
                                 loop
                                 src={post.video.asset.url}
