@@ -19,6 +19,15 @@ const VideoCard: NextPage<IProps> = ({post}) => {
     const [isVideoMuted, setIsVideoMuted] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
 
+    // useEffect(() => {
+    //
+    //     onVideoPress();
+    //
+    //     return () => {
+    //
+    //     };
+    // }, []);
+
     const onVideoPress = () => {
         if (playing) {
             videoRef?.current?.pause();
@@ -27,7 +36,18 @@ const VideoCard: NextPage<IProps> = ({post}) => {
             videoRef?.current?.play();
             setPlaying(true);
         }
+    }
+
+
+    const videoHoverOn = () => {
+        videoRef?.current?.play();
+        setPlaying(true);
     };
+
+    const videoHoverOff = () => {
+        videoRef?.current?.pause();
+        setPlaying(false);
+    }
 
     return (
         <div className='flex flex-col border-b-2 border-gray-200 pb-6'>
@@ -76,9 +96,14 @@ const VideoCard: NextPage<IProps> = ({post}) => {
                                 loop
                                 src={post.video.asset.url}
                                 ref={videoRef}
-                                onMouseOver={onVideoPress}
-                                onMouseOut={onVideoPress}
-                                className='lg:w-[600px] h-[300px] md:h-[400px] lg:h-[528px] w-[200px] rounded-2xl cursor-pointer bg-gray-100'
+                                onClick={onVideoPress}
+                                onMouseOver={videoHoverOn}
+                                onMouseOut={videoHoverOff}
+                                className='lg:w-[600px]
+                                {/*h-[300px]*/}
+                                md:h-[400px]
+                                lg:h-[528px]
+                                w-[200px] rounded-2xl cursor-pointer bg-gray-100'
                             ></video>
                     </Link>
 
