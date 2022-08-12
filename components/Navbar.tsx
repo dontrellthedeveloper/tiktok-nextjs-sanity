@@ -12,7 +12,7 @@ import Logo from '../utils/tiktok-logo.png';
 import {createOrGetUser} from "../utils";
 
 const Navbar = () => {
-    const { userProfile, addUser, removeUser } = useAuthStore();
+    const { userProfile, addUser, removeUser }: any = useAuthStore();
 
     // @ts-ignore
     return (
