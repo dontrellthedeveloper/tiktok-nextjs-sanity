@@ -42,30 +42,30 @@ const Sidebar = () => {
                             </div>
                         </Link>
                     </div>
-                    {/*{!userProfile && (*/}
-                    {/*    <div className='px-2 py-4 hidden xl:block'>*/}
-                    {/*        <p className='text-gray-400'>*/}
-                    {/*            Log in to like and comment on videos.*/}
-                    {/*        </p>*/}
-                    {/*        <div className='pr-4'>*/}
-                    {/*            <GoogleLogin*/}
-                    {/*                clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}*/}
-                    {/*                render={(renderProps) => (*/}
-                    {/*                    <button*/}
-                    {/*                        className='bg-white text-lg text-[#ef0a4f] border-[1px] border-[#ef0a4f] font-semibold px-6 py-3 rounded-md outline-none w-full mt-3 hover:text-white hover:bg-[#ef0a4f]'*/}
-                    {/*                        onClick={renderProps.onClick}*/}
-                    {/*                        disabled={renderProps.disabled}*/}
-                    {/*                    >*/}
-                    {/*                        Log in*/}
-                    {/*                    </button>*/}
-                    {/*                )}*/}
-                    {/*                // onSuccess={(res) => fetchGoogleResponse(res, addUser)}*/}
-                    {/*                // onFailure={(res) => fetchGoogleResponse(res, addUser)}*/}
-                    {/*                cookiePolicy='single_host_origin'*/}
-                    {/*            />*/}
-                    {/*        </div>*/}
-                    {/*    </div>*/}
-                    {/*)}*/}
+                    {!userProfile && (
+                        <div className='px-2 py-4 hidden xl:block'>
+                            <p className='text-gray-400'>
+                                Log in to like and comment on videos.
+                            </p>
+                            <div className='pr-4'>
+                                <GoogleLogin
+                                    clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}
+                                    render={(renderProps) => (
+                                        <button
+                                            className='bg-white text-lg text-[#ef0a4f] border-[1px] border-[#ef0a4f] font-semibold px-6 py-3 rounded-md outline-none w-full mt-3 hover:text-white hover:bg-[#ef0a4f]'
+                                            onClick={renderProps.onClick}
+                                            disabled={renderProps.disabled}
+                                        >
+                                            Log in
+                                        </button>
+                                    )}
+                                    // onSuccess={(res) => fetchGoogleResponse(res, addUser)}
+                                    // onFailure={(res) => fetchGoogleResponse(res, addUser)}
+                                    cookiePolicy='single_host_origin'
+                                />
+                            </div>
+                        </div>
+                    )}
                     <Discover />
                     <SuggestedAccounts/>
                     <Footer />

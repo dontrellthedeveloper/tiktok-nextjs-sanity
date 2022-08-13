@@ -120,10 +120,10 @@ const Upload = () => {
                                             <p className='text-gray-400 text-center mt-10 text-sm leading-10'>
                                                 MP4 or WebM or ogg <br />
                                                 720x1280 resolution or higher <br />
-                                                Up to 3 minutes <br />
-                                                Less than 200MB
-                                                {/*Up to 10 minutes <br />*/}
-                                                {/*Less than 2GB*/}
+                                                {/*Up to 3 minutes <br />*/}
+                                                {/*Less than 200MB*/}
+                                                Up to 10 minutes <br />
+                                                Less than 2GB
                                             </p>
                                             <p className='bg-[#ef0a4f] text-center mt-8 rounded text-white text-md font-medium p-2 w-52 outline-none'>
                                                 Select file
