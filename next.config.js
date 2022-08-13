@@ -8,3 +8,4 @@ module.exports = {
     domains: ['i.ibb.co', 'lh3.googleusercontent.com']
   }
 }
+
