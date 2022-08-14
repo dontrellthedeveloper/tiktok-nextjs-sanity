@@ -7,8 +7,12 @@ export const topics = [
     name: 'coding',
     icon: <BsCode />,
   },
+  // {
+  //   name: 'comedy',
+  //   icon: <BsEmojiSunglasses />,
+  // },
   {
-    name: 'comedy',
+    name: 'photography',
     icon: <BsEmojiSunglasses />,
   },
   {

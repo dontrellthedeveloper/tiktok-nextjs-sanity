@@ -17,45 +17,99 @@ const VideoCard: NextPage<IProps> = ({post}) => {
     const [isHover, setIsHover] = useState(false);
     const [playing, setPlaying] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
-    const videoRef = useRef<HTMLVideoElement>(null);
+    // const videoRef = useRef<HTMLVideoElement>(null);
+    const videoRef2 = useRef<HTMLVideoElement>(null);
+
+
+
 
 
 
     const onVideoPress = () => {
         if (playing) {
-            videoRef?.current?.pause();
+            videoRef2?.current?.pause();
             setPlaying(false);
         } else {
-            videoRef?.current?.play();
+            videoRef2?.current?.play();
             setPlaying(true);
         }
     }
 
 
     const videoHoverOn = () => {
-        videoRef?.current?.play();
+        videoRef2?.current?.play();
         setPlaying(true);
     };
 
     const videoHoverOff = () => {
-        videoRef?.current?.pause();
+        videoRef2?.current?.pause();
         setPlaying(false);
     }
 
+    useEffect(() => {
+        let options = {
+            rootMargin: "0px",
+            threshold: [0.25, 0.75]
+        };
 
+        let handlePlay = (entries: any, observe: any) => {
+            entries.forEach((entry: any) => {
+                if (entry.isIntersecting) {
+                    videoRef2?.current?.play();
+                } else {
+                    videoRef2?.current?.pause();
+                }
+            });
+        };
+
+        let observer = new IntersectionObserver(handlePlay, options);
+
+        observer.observe(videoRef2?.current!);
+    });
 
     useEffect(() => {
-        if (videoRef?.current) {
-            videoRef.current.muted = isVideoMuted;
+        if (videoRef2?.current) {
+            videoRef2.current.muted = isVideoMuted;
         }
     }, [isVideoMuted]);
+
+
+
+    // const onVideoPress = () => {
+    //     if (playing) {
+    //         videoRef?.current?.pause();
+    //         setPlaying(false);
+    //     } else {
+    //         videoRef?.current?.play();
+    //         setPlaying(true);
+    //     }
+    // }
+    //
+    //
+    // const videoHoverOn = () => {
+    //     videoRef?.current?.play();
+    //     setPlaying(true);
+    // };
+    //
+    // const videoHoverOff = () => {
+    //     videoRef?.current?.pause();
+    //     setPlaying(false);
+    // }
+    //
+    //
+    //
+    // useEffect(() => {
+    //     if (videoRef?.current) {
+    //         videoRef.current.muted = isVideoMuted;
+    //     }
+    // }, [isVideoMuted]);
 
     return (
         <div className='flex flex-col border-b-2 border-gray-200 pb-6'>
             <div>
                 <div className='flex gap-3 p-2 cursor-pointer font-semibold rounded '>
                     <div className='md:w-16 md:h-16 w-10 h-10'>
-                        <Link href=''>
+                        <Link href={`/profile/${post.postedBy._id}`}>
                             <>
                                 <Image
                                     width={62}
@@ -80,56 +134,70 @@ const VideoCard: NextPage<IProps> = ({post}) => {
                                 </p>
                             </div>
                         </Link>
-                        {/*<Link href={`/detail/${_id}`}>*/}
-                        {/*    <p className='mt-2 font-normal '>{caption}</p>*/}
+                        <Link href={`/detail/${post._id}`}>
+                            <p className='mt-2 mb-5 font-normal '>{post.caption}</p>
+                        </Link>
+                        {/*<Link href={`/detail/${post._id}`}>*/}
+                        {/*    <p className='mt-2 mb-5 font-normal '>#Photography #West Coast #LA</p>*/}
                         {/*</Link>*/}
                     </div>
                 </div>
             </div>
             <div className='lg:ml-20 flex gap-4 relative'>
                 <div className='rounded-3xl'
-                     onMouseEnter={() => setIsHover(true)}
-                     onMouseLeave={() => setIsHover(false)}
+                     // onMouseEnter={() => setIsHover(true)}
+                     // onMouseLeave={() => setIsHover(false)}
                 >
 
                     <Link href={`/detail/${post._id}`}>
                             <video
                                 loop
                                 src={post.video.asset.url}
-                                ref={videoRef}
+                                ref={videoRef2}
                                 onClick={onVideoPress}
-                                onMouseOver={videoHoverOn}
-                                onMouseOut={videoHoverOff}
-                                className='lg:w-[600px]
-                                {/*h-[300px]*/}
+                                controls
+                                // onMouseOver={videoHoverOn}
+                                // onMouseOut={videoHoverOff}
+                                autoPlay
+                                className='
+                                {/*lg:w-[600px]*/}
+                                h-[300px]
                                 md:h-[400px]
-                                lg:h-[528px]
-                                w-[200px] rounded-2xl cursor-pointer bg-gray-100'
+                                lg:h-[600px]
+                                {/*w-[200px] */}
+                                w-full
+                                rounded-2xl cursor-pointer bg-gray-100'
                             ></video>
                     </Link>
 
-                    {isHover && (
-                        <div className='absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] lg:w-[600px] p-3'>
-                            {playing ? (
-                                <button onClick={onVideoPress}>
-                                    <BsFillPauseFill className='text-black text-2xl lg:text-4xl' />
-                                </button>
-                            ) : (
-                                <button onClick={onVideoPress}>
-                                    <BsFillPlayFill className='text-black text-2xl lg:text-4xl' />
-                                </button>
-                            )}
-                            {isVideoMuted ? (
-                                <button onClick={() => setIsVideoMuted(false)}>
-                                    <HiVolumeOff className='text-black text-2xl lg:text-4xl' />
-                                </button>
-                            ) : (
-                                <button onClick={() => setIsVideoMuted(true)}>
-                                    <HiVolumeUp className='text-black text-2xl lg:text-4xl' />
-                                </button>
-                            )}
-                        </div>
-                    )}
+                    {/*{isHover && (*/}
+                    {/*    <div className='absolute bottom-6 cursor-pointer*/}
+                    {/*    /!*left-8 *!/*/}
+                    {/*    left-4*/}
+                    {/*    /!*md:left-14 *!/*/}
+                    {/*    lg:left-4 flex gap-20*/}
+                    {/*    /!*lg:justify-between*!/*/}
+                    {/*    w-[100px] md:w-[50px] lg:w-[600px] p-3'>*/}
+                    {/*        {playing ? (*/}
+                    {/*            <button onClick={onVideoPress}>*/}
+                    {/*                <BsFillPauseFill className='text-white text-2xl lg:text-3xl' />*/}
+                    {/*            </button>*/}
+                    {/*        ) : (*/}
+                    {/*            <button onClick={onVideoPress}>*/}
+                    {/*                <BsFillPlayFill className='text-white text-2xl lg:text-3xl' />*/}
+                    {/*            </button>*/}
+                    {/*        )}*/}
+                    {/*        {isVideoMuted ? (*/}
+                    {/*            <button onClick={() => setIsVideoMuted(false)}>*/}
+                    {/*                <HiVolumeOff className='text-white text-2xl lg:text-2xl' />*/}
+                    {/*            </button>*/}
+                    {/*        ) : (*/}
+                    {/*            <button onClick={() => setIsVideoMuted(true)}>*/}
+                    {/*                <HiVolumeUp className='text-white text-2xl lg:text-2xl' />*/}
+                    {/*            </button>*/}
+                    {/*        )}*/}
+                    {/*    </div>*/}
+                    {/*)}*/}
                 </div>
             </div>
         </div>

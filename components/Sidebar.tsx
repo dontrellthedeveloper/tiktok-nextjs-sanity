@@ -3,19 +3,25 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import GoogleLogin from 'react-google-login';
-import { AiFillHome, AiOutlineMenu } from 'react-icons/ai';
+import { AiFillHome, AiOutlineMenu, AiOutlineHome } from 'react-icons/ai';
 import { ImCancelCircle } from 'react-icons/im';
 
 import SuggestedAccounts from './SuggestedAccounts';
 import Discover from './Discover';
 import Footer from './Footer';
+import {topics} from "../utils/constants";
 
 
 const Sidebar = () => {
-    const [showSidebar, setShowSidebar] = useState<Boolean>(true);
+    const [showSidebar, setShowSidebar] = useState<Boolean>(true)
+    const router = useRouter();
+    const { topic } = router.query;
 
 
-    const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#ef0a4f] rounded';
+    const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#ef0a4f] focus:text-gray-400 rounded';
+    const activeTopicLink = 'flex items-center gap-3 hover:bg-primary p-2 justify-center xl:justify-start cursor-pointer font-semibold text-[#ef0a4f] rounded';
+    const topicLink = 'flex items-center gap-3 hover:bg-primary p-2 justify-center xl:justify-start cursor-pointer font-semibold text-black rounded';
+
 
     const userProfile = false;
 
@@ -33,14 +39,30 @@ const Sidebar = () => {
                     <div className='xl:border-b-2 border-gray-200 xl:pb-4'>
                         <Link href='/'>
                             <div className={normalLink}>
-                                <p className='text-2xl'>
-                                    <AiFillHome />
+                                <p className='text-3xl '>
+                                    <AiOutlineHome />
                                 </p>
-                                <span className='capitalize text-xl hidden xl:block'>
+                                <span className='capitalize text-md hidden xl:block'>
                                   For You
                                 </span>
                             </div>
                         </Link>
+
+
+                        {/*{topics.slice(0, 1).map((item) => (*/}
+                        {/*    <Link href='/'>*/}
+                        {/*        <div className={topic === '/' ? topicLink : activeTopicLink}>*/}
+                        {/*            <p className='text-3xl'>*/}
+                        {/*                <AiOutlineHome />*/}
+                        {/*            </p>*/}
+                        {/*            <span className='capitalize text-md hidden xl:block'>*/}
+                        {/*               For You*/}
+                        {/*         </span>*/}
+                        {/*        </div>*/}
+                        {/*    </Link>*/}
+                        {/*))}*/}
+
+
                     </div>
                     {!userProfile && (
                         <div className='px-2 py-4 hidden xl:block'>
