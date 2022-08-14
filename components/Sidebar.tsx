@@ -39,7 +39,7 @@ const Sidebar = ({href}: any) => {
                     <div className='xl:border-b-2 border-gray-200 xl:pb-4'>
                         <Link href='/'>
                             {/*<div className={normalLink}>*/}
-                            <div className={router.pathname === '/' ? activeTopicLink : topicLink}>
+                            <div className={router.asPath === '/' ? activeTopicLink : topicLink}>
                                 <p className='text-3xl '>
                                     <AiOutlineHome />
                                 </p>
