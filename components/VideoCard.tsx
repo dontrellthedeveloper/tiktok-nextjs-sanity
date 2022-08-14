@@ -49,7 +49,8 @@ const VideoCard: NextPage<IProps> = ({post}) => {
     useEffect(() => {
         let options = {
             rootMargin: "0px",
-            threshold: [0.25, 0.75]
+            // threshold: [0.25, 0.75]
+            threshold: [1, 1]
         };
 
         let handlePlay = (entries: any, observe: any) => {
@@ -105,7 +106,7 @@ const VideoCard: NextPage<IProps> = ({post}) => {
     // }, [isVideoMuted]);
 
     return (
-        <div className='flex flex-col border-b-2 border-gray-200 pb-6'>
+        <div className='flex flex-col border-b-2 border-gray-200 pb-24 pt-6'>
             <div>
                 <div className='flex gap-3 p-2 cursor-pointer font-semibold rounded '>
                     <div className='md:w-16 md:h-16 w-10 h-10'>
