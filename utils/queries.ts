@@ -95,7 +95,7 @@ export const singleUserQuery = (userId: string | string[]) => {
 };
 
 export const allUsersQuery = () => {
-  const query = `*[_type == "user"]`;
+  const query = `*[_type == "user"] | order(order asc)`;
 
   return query;
 };

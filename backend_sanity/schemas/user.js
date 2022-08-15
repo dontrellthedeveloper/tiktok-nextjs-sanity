@@ -13,5 +13,11 @@ export default {
             title: 'Image',
             type: 'string',
         },
+        {
+            name: "order",
+            title: "Order",
+            type: "number",
+            hidden: true,
+        },
     ],
 };

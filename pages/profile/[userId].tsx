@@ -60,7 +60,7 @@ const Profile = ({ data }: IProps) => {
                 <div className='flex flex-col justify-center'>
                     <div className='text-md md:text-2xl font-bold tracking-wider flex gap-2 items-center justify-center lowercase'>
                         <span>{user.userName.replaceAll(' ', '')} </span>
-                        <GoVerified className='text-blue-400 md:text-xl text-md' />
+                        <GoVerified className='text-[#50d4ec] md:text-xl text-md' />
                     </div>
                     <p className='text-sm font-medium'> {user.userName}</p>
                 </div>

@@ -48,5 +48,11 @@ export default {
             title: 'Topic',
             type: 'string',
         },
+        // {
+        //     name: "order",
+        //     title: "Order",
+        //     type: "number",
+        //     hidden: true,
+        // },
     ],
 };

@@ -1,43 +1,51 @@
-import { BsCode, BsEmojiSunglasses } from 'react-icons/bs';
+import {BsBrush, BsCode, BsEmojiSunglasses, BsGlobe2} from 'react-icons/bs';
 import { GiCakeSlice, GiGalaxy, GiLipstick } from 'react-icons/gi';
-import { FaPaw, FaMedal, FaGamepad } from 'react-icons/fa';
+import { FaPaw, FaMedal, FaGamepad, FaPaintBrush } from 'react-icons/fa';
+import {RiShirtLine} from "react-icons/ri";
+import {AiOutlineCamera} from "react-icons/ai";
+import {IoGameControllerOutline, IoMedalOutline, IoPizzaOutline} from "react-icons/io5";
 
 export const topics = [
-  {
-    name: 'coding',
-    icon: <BsCode />,
-  },
+
   // {
   //   name: 'comedy',
   //   icon: <BsEmojiSunglasses />,
   // },
   {
     name: 'photography',
-    icon: <BsEmojiSunglasses />,
+    icon: <AiOutlineCamera />,
   },
   {
     name: 'gaming',
-    icon: <FaGamepad />,
+    icon: <IoGameControllerOutline />,
   },
   {
     name: 'food',
-    icon: <GiCakeSlice />,
+    icon: <IoPizzaOutline />,
   },
   {
     name: 'dance',
-    icon: <GiGalaxy />,
+    icon: <BsGlobe2 />,
   },
   {
     name: 'beauty',
     icon: <GiLipstick />,
   },
+  // {
+  //   name: 'animals',
+  //   icon: <FaPaw />,
+  // },
   {
-    name: 'animals',
-    icon: <FaPaw />,
+    name: 'fashion',
+    icon: <RiShirtLine />,
+  },
+  {
+    name: 'art',
+    icon: <BsBrush />,
   },
   {
     name: 'sports',
-    icon: <FaMedal />,
+    icon: <IoMedalOutline />,
   },
 ];
 
