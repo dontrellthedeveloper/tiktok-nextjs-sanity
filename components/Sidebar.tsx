@@ -34,9 +34,7 @@ const Sidebar = ({href}: any) => {
     // const userProfile = false;
     const { userProfile, addUser, removeUser }: any = useAuthStore();
 
-    const login = useGoogleLogin({
-        onSuccess: response => createOrGetUser(response, addUser)
-    });
+
 
     return (
         <div>
