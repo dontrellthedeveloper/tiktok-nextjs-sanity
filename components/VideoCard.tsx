@@ -139,9 +139,6 @@ const VideoCard: NextPage<IProps> = ({post}) => {
                         <Link href={`/detail/${post._id}`}>
                             <p className='mt-2 mb-5 font-normal '>{post.caption}</p>
                         </Link>
-                        {/*<Link href={`/detail/${post._id}`}>*/}
-                        {/*    <p className='mt-2 mb-5 font-normal '>#Photography #West Coast #LA</p>*/}
-                        {/*</Link>*/}
                     </div>
                 </div>
             </div>
