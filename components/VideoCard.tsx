@@ -86,7 +86,7 @@ const VideoCard: NextPage<IProps> = ({post, comments}) => {
         let options = {
             rootMargin: "0px",
             // threshold: [0.25, 0.75]
-            threshold: [0.80, 1]
+            threshold: [0.90, 1]
         };
 
         let handlePlay = (entries: any, observe: any) => {
