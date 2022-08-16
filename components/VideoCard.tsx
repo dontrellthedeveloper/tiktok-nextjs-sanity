@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {Dispatch, SetStateAction, useEffect, useRef, useState} from 'react';
 import {NextPage} from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,8 +20,23 @@ interface IProps {
 }
 
 
+interface IProps {
+    isPostingComment: Boolean;
+    comment: string;
+    setComment: Dispatch<SetStateAction<string>>;
+    addComment: (e: React.FormEvent) => void;
+    comments: IComment[];
+}
 
-const VideoCard: NextPage<IProps> = ({post}) => {
+interface IComment {
+    comment: string;
+    length?: number;
+    _key: string;
+    postedBy: { _ref?: string; _id?: string };
+}
+
+
+const VideoCard: NextPage<IProps> = ({post, comments}) => {
     const [isHover, setIsHover] = useState(false);
     const [postCard, setPostCard] = useState(post);
     const [playing, setPlaying] = useState(false);
@@ -221,7 +236,10 @@ const VideoCard: NextPage<IProps> = ({post}) => {
                 </div>
                 <div className='flex flex-col-reverse'>
                     <ShareButton/>
-                    <CommentButton/>
+                    <CommentButton
+                        comments={postCard.comments}
+                        postCard={postCard}
+                    />
                     <LikeButton
                         likes={postCard.likes}
                         flex='flex'

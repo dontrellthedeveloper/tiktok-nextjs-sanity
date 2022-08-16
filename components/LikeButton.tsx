@@ -38,9 +38,9 @@ const LikeButton = ({ handleLike, handleDislike, likes}: IProps) => {
                     </div>
                 )}
 
-                {alreadyLiked && (
-                    <p className='text-xs font-semibold '>{likes?.length || 0}</p>
-                    )}
+                {/*{alreadyLiked && (*/}
+                    <p className='text-xs mt-0.5 font-semibold '>{likes?.length || 0}</p>
+                    {/*)}*/}
 
             </div>
         </div>

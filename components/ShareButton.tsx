@@ -3,7 +3,7 @@ import { MdFavorite } from 'react-icons/md';
 import { NextPage } from 'next';
 
 import useAuthStore from '../store/authStore';
-import {BsFillChatDotsFill, IoIosShareAlt} from "react-icons/all";
+import { IoIosShareAlt} from "react-icons/io";
 
 // interface IProps {
 //     likes: any[];
@@ -28,7 +28,7 @@ const CommentButton = () => {
 
     return (
         <div className={`gap-6 flex flex-col-reverse ml-2`}>
-            <div className='mt-4 flex flex-col justify-center items-center cursor-pointer'>
+            <div className='mt-2 flex flex-col justify-center items-center cursor-pointer'>
                 {/*{alreadyLiked ? (*/}
                 <div className='bg-primary rounded-full p-2 md:p-4 text-black'
                     // onClick={handleDislike}
