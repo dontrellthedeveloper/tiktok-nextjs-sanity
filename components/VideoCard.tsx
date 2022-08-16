@@ -8,19 +8,40 @@ import { GoVerified } from 'react-icons/go';
 import { BsPlay } from 'react-icons/bs';
 
 import { Video } from '../types';
+import LikeButton from "./LikeButton";
+import axios from "axios";
+import {BASE_URL} from "../utils";
+import useAuthStore from "../store/authStore";
+import CommentButton from "./CommentButton";
+import ShareButton from "./ShareButton";
 
 interface IProps {
     post: Video
 }
 
+
+
 const VideoCard: NextPage<IProps> = ({post}) => {
     const [isHover, setIsHover] = useState(false);
+    const [postCard, setPostCard] = useState(post);
     const [playing, setPlaying] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
     // const videoRef = useRef<HTMLVideoElement>(null);
     const videoRef2 = useRef<HTMLVideoElement>(null);
+    const { userProfile }: any = useAuthStore();
 
 
+
+    const handleLike = async (like: boolean) => {
+        if (userProfile) {
+            const {data} = await axios.put(`${BASE_URL}/api/like`, {
+                userId: userProfile._id,
+                postId: post._id,
+                like
+            });
+            setPostCard({ ...post, likes: data.likes });
+        }
+    };
 
 
 
@@ -110,13 +131,13 @@ const VideoCard: NextPage<IProps> = ({post}) => {
             <div>
                 <div className='flex gap-3 p-2 cursor-pointer font-semibold rounded '>
                     <div className='md:w-16 md:h-16 w-10 h-10'>
-                        <Link href={`/profile/${post.postedBy._id}`}>
+                        <Link href={`/profile/${postCard.postedBy._id}`}>
                             <>
                                 <Image
                                     width={62}
                                     height={62}
                                     className=' rounded-full'
-                                    src={post.postedBy?.image}
+                                    src={postCard.postedBy?.image}
                                     alt='user-profile'
                                     layout='responsive'
                                 />
@@ -124,20 +145,20 @@ const VideoCard: NextPage<IProps> = ({post}) => {
                         </Link>
                     </div>
                     <div>
-                        <Link href={`/profile/${post.postedBy._id}`}>
+                        <Link href={`/profile/${postCard.postedBy._id}`}>
                             <div className='flex items-center gap-2'>
                                 <p className='flex gap-2 items-center md:text-md font-bold text-primary lowercase text-lg'>
                                     {/*{post.postedBy.userName}{' '}*/}
-                                    {post.postedBy.userName.replace(/\s+/g, '')}{' '}
+                                    {postCard.postedBy.userName.replace(/\s+/g, '')}{' '}
                                     <GoVerified className='text-[#50d4ec] text-md' />
                                 </p>
                                 <p className='capitalize font-medium text-xs text-gray-500 hidden md:block'>
-                                    {post.postedBy.userName}
+                                    {postCard.postedBy.userName}
                                 </p>
                             </div>
                         </Link>
-                        <Link href={`/detail/${post._id}`}>
-                            <p className='mt-2 mb-5 font-normal '>{post.caption}</p>
+                        <Link href={`/detail/${postCard._id}`}>
+                            <p className='mt-2 mb-5 font-normal '>{postCard.caption}</p>
                         </Link>
                     </div>
                 </div>
@@ -148,10 +169,10 @@ const VideoCard: NextPage<IProps> = ({post}) => {
                      // onMouseLeave={() => setIsHover(false)}
                 >
 
-                    <Link href={`/detail/${post._id}`}>
+                    <Link href={`/detail/${postCard._id}`}>
                             <video
                                 loop
-                                src={post.video.asset.url}
+                                src={postCard?.video?.asset.url}
                                 ref={videoRef2}
                                 onClick={onVideoPress}
                                 controls
@@ -198,6 +219,21 @@ const VideoCard: NextPage<IProps> = ({post}) => {
                     {/*    </div>*/}
                     {/*)}*/}
                 </div>
+                <div className='flex flex-col-reverse'>
+                    <ShareButton/>
+                    <CommentButton/>
+                    <LikeButton
+                        likes={postCard.likes}
+                        flex='flex'
+                        handleLike={() => handleLike(true)}
+                        handleDislike={() => handleLike(false)}
+                        // handleLike={() =>{}}
+                        // handleDislike={() => {}}
+                    />
+
+                </div>
+
+
             </div>
         </div>
     );

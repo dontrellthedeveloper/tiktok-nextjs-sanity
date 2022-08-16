@@ -116,9 +116,7 @@ const Sidebar = ({href}: any) => {
                                 {/*/>*/}
                             {/*</div>*/}
                         </div>
-                        // <div>
-                        //
-                        // </div>
+
                     // ) : (
                     //     <div className='flex gap-3 p-2 mt-4 cursor-pointer font-semibold rounded '>
                     //         <div className='md:w-16 md:h-16 w-10 h-10'>
