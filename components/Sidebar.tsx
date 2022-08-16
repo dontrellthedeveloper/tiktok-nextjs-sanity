@@ -79,12 +79,13 @@ const Sidebar = ({href}: any) => {
 
                     </div>
                     {/*{!userProfile && (*/}
-                    {!userProfile ? (
-                        <div className='px-2 py-4 hidden xl:block'>
-                            <p className='text-gray-400 mt-2'>
-                                Log in to like and comment on videos.
-                            </p>
-                            <div className='pr-4'>
+                    {!userProfile && (
+                        <div>
+                        {/*<div className='px-2 py-4 hidden xl:block'>*/}
+                            {/*<p className='text-gray-400 mt-2'>*/}
+                            {/*    Log in to like and comment on videos.*/}
+                            {/*</p>*/}
+                            {/*<div className='pr-4'>*/}
                                 {/*<GoogleLogin*/}
                                 {/*    clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}*/}
                                 {/*    render={(renderProps) => (*/}
@@ -113,48 +114,48 @@ const Sidebar = ({href}: any) => {
                                 {/*    onSuccess={(response) => createOrGetUser(response, addUser) }*/}
                                 {/*    onError={() => console.log('Login Failed')}*/}
                                 {/*/>*/}
-                            </div>
+                            {/*</div>*/}
                         </div>
                         // <div>
                         //
                         // </div>
-                    ) : (
-                        <div className='flex gap-3 p-2 mt-4 cursor-pointer font-semibold rounded '>
-                            <div className='md:w-16 md:h-16 w-10 h-10'>
-                                <Link href={`/profile/${userProfile._id}`}>
-                                    <>
-                                        <Image
-                                            width={62}
-                                            height={62}
-                                            className=' rounded-full'
-                                            src={userProfile.image}
-                                            alt='user-profile'
-                                            layout='responsive'
-                                        />
-                                    </>
-                                </Link>
-                            </div>
-                            <div>
-                                <Link href={`/profile/${userProfile._id}`}>
-                                    <>
-                                        <div className='flex items-center gap-2'>
-                                            <p className='flex gap-2 items-center md:text-md font-bold text-primary lowercase text-lg'>
-                                                {/*{post.postedBy.userName}{' '}*/}
-                                                {userProfile.userName.replace(/\s+/g, '')}{' '}
-                                                <GoVerified className='text-[#50d4ec] text-md' />
-                                            </p>
-
-                                        </div>
-                                        <p className='capitalize font-medium text-xs text-gray-500 hidden md:block'>
-                                            {userProfile.userName}
-                                        </p>
-                                    </>
-                                </Link>
-                                {/*<Link href={`/detail/${post._id}`}>*/}
-                                {/*    <p className='mt-2 mb-5 font-normal '>{post.caption}</p>*/}
-                                {/*</Link>*/}
-                            </div>
-                        </div>
+                    // ) : (
+                    //     <div className='flex gap-3 p-2 mt-4 cursor-pointer font-semibold rounded '>
+                    //         <div className='md:w-16 md:h-16 w-10 h-10'>
+                    //             <Link href={`/profile/${userProfile._id}`}>
+                    //                 <>
+                    //                     <Image
+                    //                         width={62}
+                    //                         height={62}
+                    //                         className=' rounded-full'
+                    //                         src={userProfile.image}
+                    //                         alt='user-profile'
+                    //                         layout='responsive'
+                    //                     />
+                    //                 </>
+                    //             </Link>
+                    //         </div>
+                    //         <div>
+                    //             <Link href={`/profile/${userProfile._id}`}>
+                    //                 <>
+                    //                     <div className='flex items-center gap-2'>
+                    //                         <p className='flex gap-2 items-center md:text-md font-bold text-primary lowercase text-lg'>
+                    //                             {/*{post.postedBy.userName}{' '}*/}
+                    //                             {userProfile.userName.replace(/\s+/g, '')}{' '}
+                    //                             <GoVerified className='text-[#50d4ec] text-md' />
+                    //                         </p>
+                    //
+                    //                     </div>
+                    //                     <p className='capitalize font-medium text-xs text-gray-500 hidden md:block'>
+                    //                         {userProfile.userName}
+                    //                     </p>
+                    //                 </>
+                    //             </Link>
+                    //             {/*<Link href={`/detail/${post._id}`}>*/}
+                    //             {/*    <p className='mt-2 mb-5 font-normal '>{post.caption}</p>*/}
+                    //             {/*</Link>*/}
+                    //         </div>
+                    //     </div>
                         )}
                     <Discover />
                     <SuggestedAccounts/>

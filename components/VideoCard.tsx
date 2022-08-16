@@ -50,7 +50,7 @@ const VideoCard: NextPage<IProps> = ({post}) => {
         let options = {
             rootMargin: "0px",
             // threshold: [0.25, 0.75]
-            threshold: [1, 1]
+            threshold: [0.80, 1]
         };
 
         let handlePlay = (entries: any, observe: any) => {
@@ -162,7 +162,7 @@ const VideoCard: NextPage<IProps> = ({post}) => {
                                 {/*lg:w-[600px]*/}
                                 h-[300px]
                                 md:h-[400px]
-                                lg:h-[600px]
+                                lg:h-[528px]
                                 {/*w-[200px] */}
                                 w-full
                                 rounded-2xl cursor-pointer bg-gray-100'
