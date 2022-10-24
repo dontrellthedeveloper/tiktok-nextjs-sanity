@@ -37,7 +37,7 @@
 <h3 align="center">TikTok Clone - Next.js Sanity.io Application</h3>
 
   <p align="center">
-    This TikTok Clone was built using Next.js and Sanity.io. This stack includes - Next.js, React.js, Zustand, Google Login, Sanity.io, Vercel, and Tailwind CSS.
+    This TikTok Clone was built using Next.js and Sanity.io. This stack includes - Next.js, React.js, Zustand, Google Login, Sanity.io, Netlify, and Tailwind CSS.
     <br />
     <a href="https://github.com/dontrellthedeveloper/tiktok-nextjs-sanity"><strong>Explore the docs »</strong></a>
     <br />
@@ -264,23 +264,23 @@ Project Link: [https://github.com/dontrellthedeveloper/tiktok-nextjs-sanity](htt
 
 
 [Netlify]: https://img.shields.io/badge/Netlify-111111?style=for-the-badge&logo=netlify&logoColor=00C7B7
-[Netlify-url]: https://nextjs.org/
+[Netlify-url]: https://www.netlify.com/
 
 
 [Zustand]: https://img.shields.io/badge/zustand-602c3c?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAA8FBMVEVHcExXQzpKQDlFV16lpqyGh4tPPTdWT0weHRU7LRZGQzmxYjlaTkZsbmywVyxtXDSFhISXm6WWpcaytb6bm56gprY0LiiXmp2prLamsMa0XS42MSxkTUVDSkuyYzGihXdDV2GprbmedVxaRD1kTUWUdGFGOCN4a2OfpbI0SFFAMSddTkbCc0dWQiGFRypXQyJUQCBcTTWviDVXQyJcUDjlqCWxjkG+hBTiohtURD6lr8lORTtDVVZmPyxwSipaRSJDOzaWpsyYqMyYqM2dq8tPOjBERTs6QUKTcCeKaCJvViZdSDK4iSngoiDvqx7KkRuGEi1hAAAAOXRSTlMApZ78cB8hCAMQO/j/FOH4KlT1wFfJTjaY6SxtVexFn3Tn2sN6d671mVuJ+/PPN9CT6TfpS4C9jJaVLRihAAAAi0lEQVQIHXXBxRKCUAAF0Es/QMDubsVuGrv1///GBQ4bx3PwgwC8gFCRohs8QrQV0ZtKOZ9JcgBmU8MwqFa9kjNTUWB58f2jPOjU9juTBTbPq+vIar972MZjwPr1uDvqCFw2wQpQVm/t7Oo9gAgAFtrtZNtMFQFp7nkWU5IQECfjYbuQFvBFRJHgjw9L0A80UmaGpAAAAABJRU5ErkJggg==
-[Zustand-url]: https://nextjs.org/
+[Zustand-url]: https://zustand-demo.pmnd.rs/
 
 
 [GoogleLogin]: https://img.shields.io/badge/google%20login-4285F4?style=for-the-badge&logo=google&logoColor=white
-[GoogleLogin-url]: https://nextjs.org/
+[GoogleLogin-url]: https://console.cloud.google.com
 
 
 [Sanity.io]: https://img.shields.io/badge/sanity.io-333333?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAgVBMVEVHcEzzc2jwSTrpVEfucWbpXVHyc2jcXVTjYVfoal/scWbsSDrzc2jyc2jsXFDucWfua2DvcmfwcmfvcWfvUELxcmfqSDrxcmfwcGXvSTrtcWbtSDruSTrqSDnsSDnycmjxcmfuY1fuSTrvcmftSTrxYFPqSDruSTrwY1fzc2jwSTop6xAnAAAAKXRSTlMA9PAiaxfRBAoSKl377kVNnnKTXP2wMKV+2DWKpk545LvvvId45TrLweyEbdoAAAB8SURBVAgdBcGFgcQgAACwVIHKufu9w/4DfgKElAKAuN33/XEZgHCa8lzlqgWa7+o0XI75OYDF7i/StW0DDnV9Gw8JIFxLKfXvtQHE8XauS/noAEL383UuI1h8rhNWuwdYTnlzGdr5fQdhM+VqznkVgbjd9/1rnQCE1EXwDwjuB6lOQQFHAAAAAElFTkSuQmCC
-[Sanity-url]: https://nextjs.org/
+[Sanity-url]: https://www.sanity.io/
 
 
 [TailwindCSS]: https://img.shields.io/badge/tailwind%20css-06B6D4?style=for-the-badge&logo=tailwind%20css&logoColor=white
-[TailwindCSS-url]: https://nextjs.org/
+[TailwindCSS-url]: https://tailwindcss.com/
 
 
 
