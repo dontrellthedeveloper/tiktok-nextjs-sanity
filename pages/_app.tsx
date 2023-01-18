@@ -17,9 +17,18 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
     return (
         <>
+            {/*<Head>*/}
+            {/*    <title>TikTok Clone | Dontrell Dev</title>*/}
+            {/*    <link rel="icon" href="/tiktok-favicon.png" />*/}
+            {/*</Head>*/}
+
+
             <Head>
-                <title>TikTok Clone | Dontrell Dev</title>
-                <link rel="icon" href="/tiktok-favicon.png" />
+                <title>TikTok | Dontrell Dev</title>
+                <link rel="shortcut icon" href="/tiktok-favicon.png" />
+                <link rel="apple-touch-icon" sizes="180x180" href="/tiktok-favicon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/tiktok-favicon.png"/>
+                <link rel="icon" type="image/png" sizes="16x16" href="/tiktok-favicon.png"/>
             </Head>
 
             <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}>
